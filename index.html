@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aanya Sharma | UX Designer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function(){var k='aanya-theme',s=localStorage.getItem(k),t=s||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+</head>
+<body>
+
+  <!-- Sticky bar: stays at the top while the user scrolls the page -->
+  <nav class="nav">
+
+    <!-- Brand / logo area on the left -->
+    <a href="index.html" class="nav__brand">Aanya Sharma</a>
+
+    <!-- Hamburger toggle (visible on mobile) -->
+    <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+      <span class="nav__toggle-icon nav__toggle-icon--menu" aria-hidden="true">☰</span>
+      <span class="nav__toggle-icon nav__toggle-icon--close" aria-hidden="true">✕</span>
+    </button>
+
+    <div class="nav__actions">
+      <ul class="nav__links" id="nav-menu">
+        <li><a href="index.html" class="nav__link active">Home</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="projects.html" class="nav__link">Projects</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><a href="admin.html" class="nav__link">Admin</a></li>
+      </ul>
+      <button type="button" class="theme-toggle" aria-label="Switch to dark mode">🌙</button>
+    </div>
+
+  </nav>
+
+  <section class="hero">
+    <div class="hero__noise" aria-hidden="true"></div>
+    <p class="hero__eyebrow">PORTFOLIO 2026</p>
+    <h1 class="hero__title">I design products people actually enjoy using.</h1>
+    <p class="hero__subtitle">Senior UX Designer with 5 years of experience in fintech, edtech and healthcare.</p>
+    <a href="projects.html" class="hero__cta">See My Work →</a>
+    <div class="hero__scroll" aria-hidden="true"><span class="hero__scroll-dot"></span></div>
+  </section>
+
+  <section class="skills">
+    <h2 class="skills__heading">What I Do</h2>
+    <p class="skills__tagline">A toolkit shaped by 5 years of shipping real products.</p>
+
+    <div class="skills__grid">
+
+      <!-- Card 1: User Research -->
+      <article class="skills__card reveal">
+        <span class="skills__icon" aria-hidden="true">🎨</span>
+        <h3 class="skills__name">User Research</h3>
+        <p class="skills__desc">Interviews, surveys and usability tests that uncover real user needs.</p>
+      </article>
+
+      <!-- Card 2: UI Design -->
+      <article class="skills__card reveal">
+        <span class="skills__icon" aria-hidden="true">🖌️</span>
+        <h3 class="skills__name">UI Design</h3>
+        <p class="skills__desc">Pixel-perfect interfaces built in Figma with reusable design systems.</p>
+      </article>
+
+      <!-- Card 3: Information Architecture -->
+      <article class="skills__card reveal">
+        <span class="skills__icon" aria-hidden="true">🧭</span>
+        <h3 class="skills__name">Information Architecture</h3>
+        <p class="skills__desc">Clear sitemaps and flows that make complex products feel simple.</p>
+      </article>
+
+      <!-- Card 4: Prototyping -->
+      <article class="skills__card reveal">
+        <span class="skills__icon" aria-hidden="true">📐</span>
+        <h3 class="skills__name">Prototyping</h3>
+        <p class="skills__desc">High-fidelity, clickable prototypes that validate ideas before a single line of code.</p>
+      </article>
+
+      <!-- Card 5: Accessibility -->
+      <article class="skills__card reveal">
+        <span class="skills__icon" aria-hidden="true">♿</span>
+        <h3 class="skills__name">Accessibility</h3>
+        <p class="skills__desc">WCAG-compliant designs that work for everyone, on every device.</p>
+      </article>
+
+      <!-- Card 6: Design Systems -->
+      <article class="skills__card reveal">
+        <span class="skills__icon" aria-hidden="true">📊</span>
+        <h3 class="skills__name">Design Systems</h3>
+        <p class="skills__desc">Scalable component libraries that keep teams shipping fast and consistently.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <p class="footer__brand">Aanya Sharma</p>
+        <p class="footer__tagline">Designing calm products for noisy industries.</p>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__heading">Quick links</h2>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__heading">Social</h2>
+        <ul class="footer__social">
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💼</span> LinkedIn</a></li>
+          <li><a href="https://dribbble.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🎨</span> Dribbble</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🐦</span> Twitter</a></li>
+          <li><a href="mailto:hello@aanyasharma.design"><span aria-hidden="true">✉️</span> Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 Aanya Sharma — Built with curiosity and <span class="footer__heart" aria-hidden="true">♥</span> Cursor.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

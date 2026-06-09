@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Aanya Sharma</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    (function(){var k='aanya-theme',s=localStorage.getItem(k),t=s||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+</head>
+<body>
+
+  <!-- Sticky bar: stays at the top while the user scrolls the page -->
+  <nav class="nav">
+
+    <!-- Brand / logo area on the left -->
+    <a href="index.html" class="nav__brand">Aanya Sharma</a>
+
+    <!-- Hamburger toggle (visible on mobile) -->
+    <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+      <span class="nav__toggle-icon nav__toggle-icon--menu" aria-hidden="true">☰</span>
+      <span class="nav__toggle-icon nav__toggle-icon--close" aria-hidden="true">✕</span>
+    </button>
+
+    <div class="nav__actions">
+      <ul class="nav__links" id="nav-menu">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="projects.html" class="nav__link">Projects</a></li>
+        <li><a href="contact.html" class="nav__link active">Contact</a></li>
+        <li><a href="admin.html" class="nav__link">Admin</a></li>
+      </ul>
+      <button type="button" class="theme-toggle" aria-label="Switch to dark mode">🌙</button>
+    </div>
+
+  </nav>
+
+  <main class="contact">
+
+    <header class="contact__header">
+      <h1 class="contact__title">Let's build something good.</h1>
+      <p class="contact__subtitle">Project enquiries, mentorship, or just a chai-chat. I reply within 24 hours.</p>
+    </header>
+
+    <section class="contact__layout">
+
+      <aside class="contact-card reveal">
+        <h2 class="contact-card__heading">Get in touch</h2>
+        <p class="contact-card__item">
+          <span class="contact-card__label">Email</span>
+          <a href="mailto:hello@aanyasharma.design">hello@aanyasharma.design</a>
+        </p>
+        <p class="contact-card__item">
+          <span class="contact-card__label">Location</span>
+          Bengaluru, India
+        </p>
+        <div class="contact-card__social">
+          <span class="contact-card__label">Social</span>
+          <ul class="contact-card__social-buttons">
+            <li><a href="https://linkedin.com" class="contact-card__social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span aria-hidden="true">💼</span></a></li>
+            <li><a href="https://dribbble.com" class="contact-card__social-btn" target="_blank" rel="noopener noreferrer" aria-label="Dribbble"><span aria-hidden="true">🎨</span></a></li>
+            <li><a href="https://twitter.com" class="contact-card__social-btn" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span aria-hidden="true">🐦</span></a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="contact-form-wrap reveal">
+        <form id="contact-form" class="contact-form">
+          <div class="contact-form__field contact-form__field--float">
+            <input type="text" id="full-name" name="fullName" placeholder=" " required>
+            <label for="full-name">Full Name</label>
+          </div>
+
+          <div class="contact-form__field contact-form__field--float">
+            <input type="email" id="email" name="email" placeholder=" " required>
+            <label for="email">Email Address</label>
+          </div>
+
+          <div class="contact-form__field contact-form__field--float">
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Select a subject</option>
+              <option value="Project Inquiry">Project Inquiry</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="Mentorship">Mentorship</option>
+              <option value="Speaking">Speaking</option>
+              <option value="Other">Other</option>
+            </select>
+            <label for="subject">Subject</label>
+          </div>
+
+          <div class="contact-form__field contact-form__field--float">
+            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">Message</label>
+          </div>
+
+          <button type="submit" class="contact-form__submit">Send Message</button>
+        </form>
+
+        <p id="contact-success" class="contact-success" hidden>
+          ✅ Thanks! Your message was sent. I'll reply within 24 hours.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <p class="footer__brand">Aanya Sharma</p>
+        <p class="footer__tagline">Designing calm products for noisy industries.</p>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__heading">Quick links</h2>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__heading">Social</h2>
+        <ul class="footer__social">
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💼</span> LinkedIn</a></li>
+          <li><a href="https://dribbble.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🎨</span> Dribbble</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🐦</span> Twitter</a></li>
+          <li><a href="mailto:hello@aanyasharma.design"><span aria-hidden="true">✉️</span> Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 Aanya Sharma — Built with curiosity and <span class="footer__heart" aria-hidden="true">♥</span> Cursor.</p>
+  </footer>
+
+  <script src="supabase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
