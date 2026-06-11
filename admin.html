@@ -44,15 +44,15 @@
         <h1 class="admin-login__title">Admin sign in</h1>
         <p class="admin-login__subtitle">Sign in to view contact-form messages.</p>
         <form id="admin-login-form" class="admin-login__form">
-          <div class="contact-form__field contact-form__field--float">
-            <input type="email" id="admin-email" name="email" placeholder=" " required autocomplete="username">
-            <label for="admin-email">Email</label>
+          <div class="admin-login__field">
+            <label class="admin-login__label" for="admin-email">Email</label>
+            <input class="admin-login__input" type="email" id="admin-email" name="email" required autocomplete="username" placeholder="you@example.com">
           </div>
-          <div class="contact-form__field contact-form__field--float">
-            <input type="password" id="admin-password" name="password" placeholder=" " required autocomplete="current-password">
-            <label for="admin-password">Password</label>
+          <div class="admin-login__field">
+            <label class="admin-login__label" for="admin-password">Password</label>
+            <input class="admin-login__input" type="password" id="admin-password" name="password" required autocomplete="current-password" placeholder="Your password">
           </div>
-          <button type="submit" class="contact-form__submit">Sign in</button>
+          <button type="submit" class="admin-login__submit">Sign in</button>
         </form>
         <p id="admin-login-error" class="admin-login__error" hidden>Invalid email or password. Please try again.</p>
       </div>
