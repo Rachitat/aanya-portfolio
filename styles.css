@@ -1950,7 +1950,80 @@ h3 {
   }
 }
 
-/* === ADMIN (INBOX) === */
+/* === ADMIN (LOGIN + INBOX) === */
+
+.admin-login {
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px 96px;
+}
+
+.admin-login__card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.admin-login__title {
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.admin-login__subtitle {
+  margin: 0 0 28px;
+  text-align: center;
+  font-size: var(--font-size-small);
+  color: var(--text-muted);
+}
+
+.admin-login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-login__error {
+  margin: 16px 0 0;
+  font-size: var(--font-size-small);
+  color: var(--danger);
+  text-align: center;
+}
+
+.admin-panel[hidden],
+.admin-login[hidden] {
+  display: none !important;
+}
+
+.admin__toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.admin__sign-out {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.admin__sign-out:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
 
 .admin {
   max-width: 1200px;

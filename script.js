@@ -256,11 +256,31 @@ runWhenReady(() => {
   }
 
   // === ADMIN INBOX (only runs on admin.html) ===
+  const adminLoginForm = document.getElementById("admin-login-form");
+  const adminLoginSection = document.getElementById("admin-login");
+  const adminPanel = document.getElementById("admin-panel");
   const adminInbox = document.getElementById("admin-inbox");
 
-  if (adminInbox) {
+  if (adminLoginForm && adminPanel && adminInbox) {
     const adminCount = document.getElementById("admin-count");
     const unreadOnlyToggle = document.getElementById("admin-unread-only");
+    const adminLoginError = document.getElementById("admin-login-error");
+    const adminSignOut = document.getElementById("admin-sign-out");
+
+    // Show the login screen and hide the inbox
+    function showAdminLogin() {
+      adminLoginSection.hidden = false;
+      adminPanel.hidden = true;
+      if (adminLoginError) {
+        adminLoginError.hidden = true;
+      }
+    }
+
+    // Hide login and show the inbox (only after a successful sign-in)
+    function showAdminPanel() {
+      adminLoginSection.hidden = true;
+      adminPanel.hidden = false;
+    }
 
     // Turn a database timestamp into a friendly "2 hours ago" string
     function timeAgo(dateString) {
@@ -440,6 +460,74 @@ runWhenReady(() => {
       });
     }
 
-    loadAdminInbox();
+    // Sign in with email + password (Supabase Auth)
+    adminLoginForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (typeof supabaseClient === "undefined") {
+        console.error("supabaseClient is missing — check script order on admin.html");
+        return;
+      }
+
+      if (adminLoginError) {
+        adminLoginError.hidden = true;
+      }
+
+      const email = adminLoginForm.email.value.trim();
+      const password = adminLoginForm.password.value;
+
+      let response;
+
+      try {
+        response = await supabaseClient.auth.signInWithPassword({ email, password });
+      } catch (err) {
+        console.error(err);
+        if (adminLoginError) {
+          adminLoginError.hidden = false;
+        }
+        return;
+      }
+
+      if (response.error) {
+        console.error("Auth error:", response.error);
+        if (adminLoginError) {
+          adminLoginError.hidden = false;
+        }
+        return;
+      }
+
+      showAdminPanel();
+      loadAdminInbox();
+    });
+
+    // Sign out and return to the login screen
+    if (adminSignOut) {
+      adminSignOut.addEventListener("click", async () => {
+        if (typeof supabaseClient !== "undefined") {
+          await supabaseClient.auth.signOut();
+        }
+        adminLoginForm.reset();
+        showAdminLogin();
+      });
+    }
+
+    // On page load: if already signed in, show inbox; otherwise show login
+    async function initAdminAuth() {
+      if (typeof supabaseClient === "undefined") {
+        console.error("supabaseClient is missing — check script order on admin.html");
+        return;
+      }
+
+      const { data } = await supabaseClient.auth.getSession();
+
+      if (data.session) {
+        showAdminPanel();
+        loadAdminInbox();
+      } else {
+        showAdminLogin();
+      }
+    }
+
+    initAdminAuth();
   }
 });

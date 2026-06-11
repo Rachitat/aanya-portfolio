@@ -39,21 +39,45 @@
 
   <main class="admin">
 
-    <header class="admin__header">
-      <h1 class="admin__title">Inbox</h1>
-      <p class="admin__subtitle">All contact-form messages, newest first.</p>
-    </header>
+    <section id="admin-login" class="admin-login">
+      <div class="admin-login__card">
+        <h1 class="admin-login__title">Admin sign in</h1>
+        <p class="admin-login__subtitle">Sign in to view contact-form messages.</p>
+        <form id="admin-login-form" class="admin-login__form">
+          <div class="contact-form__field contact-form__field--float">
+            <input type="email" id="admin-email" name="email" placeholder=" " required autocomplete="username">
+            <label for="admin-email">Email</label>
+          </div>
+          <div class="contact-form__field contact-form__field--float">
+            <input type="password" id="admin-password" name="password" placeholder=" " required autocomplete="current-password">
+            <label for="admin-password">Password</label>
+          </div>
+          <button type="submit" class="contact-form__submit">Sign in</button>
+        </form>
+        <p id="admin-login-error" class="admin-login__error" hidden>Invalid email or password. Please try again.</p>
+      </div>
+    </section>
 
-    <div class="admin__toolbar">
-      <p class="admin__count" id="admin-count">📬 0 messages</p>
-      <label class="admin__filter">
-        <input type="checkbox" id="admin-unread-only" class="admin__filter-input">
-        <span class="admin__filter-box" aria-hidden="true"></span>
-        <span class="admin__filter-label">Unread only</span>
-      </label>
+    <div id="admin-panel" class="admin-panel" hidden>
+      <header class="admin__header">
+        <h1 class="admin__title">Inbox</h1>
+        <p class="admin__subtitle">All contact-form messages, newest first.</p>
+      </header>
+
+      <div class="admin__toolbar">
+        <p class="admin__count" id="admin-count">📬 0 messages</p>
+        <div class="admin__toolbar-actions">
+          <label class="admin__filter">
+            <input type="checkbox" id="admin-unread-only" class="admin__filter-input">
+            <span class="admin__filter-box" aria-hidden="true"></span>
+            <span class="admin__filter-label">Unread only</span>
+          </label>
+          <button type="button" id="admin-sign-out" class="admin__sign-out">Sign out</button>
+        </div>
+      </div>
+
+      <div class="admin__grid" id="admin-inbox"></div>
     </div>
-
-    <div class="admin__grid" id="admin-inbox"></div>
 
   </main>
 
