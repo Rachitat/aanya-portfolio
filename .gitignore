@@ -1,5 +1,6 @@
-# contains my API keys
-supabase-config.js
+# Note: supabase-config.js is committed on purpose — GitHub Pages needs it in the
+# repo to connect to Supabase. The anon key is safe to publish; protect data with
+# Row Level Security in Supabase (never commit the service_role key).
 
 # macOS clutter
 .DS_Store
